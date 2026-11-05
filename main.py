@@ -28,16 +28,18 @@ while running:
                 playerxchange=-0.3
             if event.key==pygame.K_RIGHT:
                 playerxchange=0.3
-        if event.type==pygame.KEYUP:
-            if event.key==pygame.K_LEFT or event.key==pygame.K_RIGHT:
-                playerxchange=0
+       # if event.type==pygame.KEYUP:
+        #    if event.key==pygame.K_LEFT or event.key==pygame.K_RIGHT:
+         #       playerxchange=0
 
-            
 
-            
-   
-    
-   
+
     playerx+=playerxchange
+    if playerx<=0:
+        playerx=0
+    elif playerx>=736:
+        playerx=736
+
+
     player(playerx,playery)
     pygame.display.update()
